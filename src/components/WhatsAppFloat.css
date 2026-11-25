@@ -1,0 +1,8 @@
+.wafloat { position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 60; width: 60px; height: 60px; border-radius: 50%;
+  display: grid; place-items: center; background: #25d366; color: #fff; box-shadow: 0 12px 30px rgba(37, 211, 102, .35); isolation: isolate; }
+.wafloat__pulse { position: absolute; inset: 0; border-radius: 50%; background: #25d366; animation: wapulse 2.4s infinite; z-index: -1; }
+@keyframes wapulse { 0% { transform: scale(1); opacity: .6 } 100% { transform: scale(1.9); opacity: 0 } }
+.wafloat__tip { position: absolute; right: calc(100% + .8rem); background: var(--cream); color: var(--ink); padding: .5rem .9rem; border-radius: 8px;
+  font-size: .82rem; font-weight: 600; white-space: nowrap; opacity: 0; transform: translateX(8px); pointer-events: none; transition: .3s var(--ease); }
+.wafloat:hover .wafloat__tip { opacity: 1; transform: none; }
+@media (max-width: 640px) { .wafloat__tip { display: none } }

@@ -1,0 +1,30 @@
+.about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 7vw, 7rem); align-items: center; }
+.about__media { position: relative; aspect-ratio: 4 / 5; }
+.about__main { position: absolute; inset: 0 18% 8% 0; border-radius: 4px; overflow: hidden; }
+.about__main .imgslot { height: 100%; }
+.about__detail { position: absolute; right: 0; bottom: 0; width: 46%; aspect-ratio: 1; border: 8px solid var(--ink); border-radius: 4px; overflow: hidden; }
+.about__detail .imgslot { height: 100%; }
+.about__badge { position: absolute; top: 8%; right: 6%; width: 120px; height: 120px; border-radius: 50%; background: var(--brass); color: var(--ink);
+  display: grid; place-content: center; text-align: center; animation: spin 18s linear infinite; }
+.about__badge span { font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; font-weight: 700; }
+.about__badge strong { font-family: var(--serif); font-size: 2rem; font-weight: 600; line-height: 1; }
+@keyframes spin { 0%, 100% { transform: rotate(-8deg) } 50% { transform: rotate(8deg) } }
+.about__p { color: var(--muted); line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.2rem; }
+.about__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; padding-top: 2.4rem; border-top: 1px solid var(--line); }
+.about__stat strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4vw, 3rem); color: var(--cream); line-height: 1; }
+.about__stat span { display: block; margin-top: .5rem; font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
+
+@media (max-width: 900px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__media { max-width: 520px; width: 100%; margin-inline: auto; }
+}
+@media (max-width: 560px) {
+  .about__badge { width: 84px; height: 84px; top: 4%; right: 2%; }
+  .about__badge span { font-size: .58rem; }
+  .about__badge strong { font-size: 1.45rem; }
+  .about__detail { border-width: 5px; }
+  .about__stats { gap: .8rem; margin-top: 2.2rem; padding-top: 1.8rem; }
+  .about__stat strong { font-size: 1.75rem; }
+  .about__stat span { font-size: .72rem; }
+  .about__p { font-size: 1rem; }
+}

@@ -1,0 +1,17 @@
+.team { background: var(--ink-2); }
+.team__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.barber:nth-child(even) { margin-top: 3rem; }
+.barber__img { position: relative; aspect-ratio: 3 / 4; border-radius: 6px; overflow: hidden; }
+.barber__img .imgslot { height: 100%; }
+.barber__img img { filter: grayscale(1); }
+.barber:hover .barber__img img { filter: grayscale(0); transform: scale(1.06); }
+.barber__ig { position: absolute; right: 1rem; bottom: 1rem; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brass); color: var(--ink); transform: translateY(16px) scale(.8); opacity: 0; transition: .45s var(--ease); }
+.barber:hover .barber__ig, .barber__ig:focus-visible { transform: none; opacity: 1; }
+.barber__info { padding-top: 1.1rem; }
+.barber__info h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; }
+.barber__info p { color: var(--brass); font-size: .85rem; margin-top: .3rem; }
+.barber__info span { display: block; color: var(--muted); font-size: .8rem; margin-top: .3rem; }
+
+@media (max-width: 960px) { .team__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .team__grid { grid-template-columns: 1fr 1fr; gap: 1rem; } .barber:nth-child(even) { margin-top: 2rem; } }

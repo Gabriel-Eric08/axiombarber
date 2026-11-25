@@ -1,0 +1,112 @@
+/* ============================================================
+   Ajustes para celular e telas de toque.
+   Importado por último em main.jsx para sobrepor os estilos das seções.
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+/* ---------- Dispositivos de toque (sem hover) ---------- */
+@media (hover: none) {
+  /* Instagram do barbeiro sempre visível */
+  .barber__ig { opacity: 1; transform: none; }
+  .barber__img img { filter: grayscale(.4); }
+  /* Legenda da galeria sempre visível */
+  .gitem__cap { transform: none; padding: 1.6rem .8rem .7rem; font-size: .75rem; }
+  .wafloat__tip { display: none; }
+}
+
+/* ---------- Tablet e celular ---------- */
+@media (max-width: 760px) {
+  .container { width: min(100% - 2.5rem, var(--container)); }
+  .section { padding-block: 4.5rem; }
+  .sh { margin-bottom: 2.2rem; }
+  .sh__title { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .sh__sub { font-size: .98rem; line-height: 1.65; }
+
+  /* Botões grandes o bastante para o dedo */
+  .btn { min-height: 48px; justify-content: center; }
+
+  /* Hero */
+  .hero { padding-bottom: max(3rem, env(safe-area-inset-bottom)); }
+  .hero__title { font-size: clamp(2.9rem, 14vw, 4.4rem); margin: 1.2rem 0 1.2rem; }
+  .hero__sub { font-size: 1rem; }
+  .hero__actions { display: grid; grid-template-columns: 1fr; gap: .7rem; margin-top: 1.8rem; }
+  .hero__proof { margin-top: 1.6rem; font-size: .8rem; flex-wrap: wrap; }
+
+  /* Faixa animada */
+  .marquee { padding-block: 1rem; }
+  .marquee__item { gap: 1.4rem; padding-right: 1.4rem; }
+
+  /* Equipe */
+  .team__grid { gap: 1rem; }
+  .barber__info h3 { font-size: 1.15rem; }
+  .barber__info p { font-size: .78rem; }
+  .barber__info span { font-size: .72rem; }
+  .barber__ig { width: 36px; height: 36px; right: .6rem; bottom: .6rem; }
+
+  /* Galeria */
+  .gallery__head { margin-bottom: 2rem; gap: 1.2rem; }
+  .gallery__head .btn { width: 100%; }
+  .gallery__grid { gap: .6rem; grid-auto-rows: 170px; }
+
+  /* Depoimentos */
+  .testi__stage { min-height: 340px; }
+  .testi__quote { width: 52px; height: 52px; top: -1.4rem; }
+  .testi blockquote { font-size: 1.4rem; }
+  .testi__dots button { width: 28px; height: 4px; }
+  .testi__dots { gap: .5rem; }
+  /* área de toque maior para os pontinhos */
+  .testi__dots button::after { content: ''; position: absolute; inset: -12px -2px; }
+  .testi__dots button { overflow: visible; }
+  .testi__dots .fill { border-radius: 2px; }
+
+  /* Horários */
+  .hours__list li { padding: .85rem 0; font-size: .92rem; gap: .6rem; }
+  .hours__list li:hover { padding-left: 0; }
+  .hours__contact a { font-size: .9rem; align-items: flex-start; line-height: 1.45; }
+  .hours__contact a svg { margin-top: .1rem; }
+  .hours__map { min-height: 320px; border-radius: 14px; }
+  .hours__mapcard { left: .8rem; right: .8rem; bottom: .8rem; padding: 1.1rem; }
+  .hours__mapcard .btn { justify-self: stretch; }
+
+  /* CTA final */
+  .fcta__frame { min-height: auto; }
+  .fcta__content { padding-block: 5rem; }
+  .fcta h2 { font-size: clamp(2.3rem, 11vw, 3.4rem); }
+  .fcta p { font-size: 1rem; }
+  .fcta__actions { display: grid; grid-template-columns: 1fr; gap: .7rem; max-width: 360px; margin-inline: auto; }
+
+  /* Rodapé: espaço extra para o botão flutuante do WhatsApp */
+  .footer { padding-top: 3.5rem; }
+  .footer__top { gap: 2rem; }
+  .footer__nav { grid-template-columns: 1fr 1fr; }
+  .footer__huge { margin-top: 2.5rem; }
+  .footer__bottom { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); flex-direction: column; }
+
+  /* Botão flutuante do WhatsApp */
+  .wafloat { width: 54px; height: 54px; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .wafloat svg { width: 26px; height: 26px; }
+}
+
+/* ---------- Celulares pequenos (até 380px) ---------- */
+@media (max-width: 380px) {
+  .container { width: min(100% - 2rem, var(--container)); }
+  .hero__title { font-size: 2.7rem; }
+  .hero__status { font-size: .72rem; }
+  .gallery__grid { grid-auto-rows: 140px; }
+  .team__grid { gap: .7rem; }
+  .barber:nth-child(even) { margin-top: 1.5rem; }
+  .about__stat strong { font-size: 1.5rem; }
+}
+
+/* ---------- Esconde o WhatsApp flutuante quando há outra coisa na base da tela ---------- */
+body.menu-open .wafloat,
+body:has(.bk-mobilebar) .wafloat { opacity: 0 !important; pointer-events: none; transform: scale(.6) !important; transition: opacity .3s, transform .3s; }
+
+/* ---------- Celular deitado (pouca altura) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-top: 6rem; }
+  .hero__title { font-size: 2.6rem; }
+  .nav__mobile-links a { font-size: 1.5rem; padding-block: .3rem; }
+}

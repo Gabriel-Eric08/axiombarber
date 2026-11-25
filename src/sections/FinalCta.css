@@ -1,0 +1,11 @@
+.fcta { position: relative; }
+.fcta__frame { position: relative; min-height: 90vh; display: grid; align-items: center; overflow: hidden; }
+.fcta__bg { position: absolute; inset: -15% 0; }
+.fcta__bg .imgslot { height: 100%; }
+.fcta__bg img { filter: grayscale(.4) brightness(.6); }
+.fcta__veil { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(14, 13, 12, .3), rgba(14, 13, 12, .85)); }
+.fcta__content { position: relative; text-align: center; padding-block: 6rem; }
+.fcta h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1; letter-spacing: -.03em; }
+.fcta h2 em { color: var(--brass); }
+.fcta p { color: var(--muted); margin: 1.6rem auto 0; max-width: 34rem; font-size: 1.1rem; line-height: 1.7; }
+.fcta__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2.6rem; }

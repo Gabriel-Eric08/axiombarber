@@ -1,0 +1,31 @@
+.services { background: var(--ink-2); }
+.services__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.svc { border-bottom: 1px solid var(--line); }
+.svc__link { position: relative; display: grid; grid-template-columns: 3rem 1fr auto auto 2.5rem; align-items: center; gap: 2rem;
+  padding: 2rem 1rem; text-decoration: none; overflow: hidden; isolation: isolate; }
+.svc__link::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--brass); transform: scaleY(0); transform-origin: bottom; transition: transform .55s var(--ease); }
+/* Efeitos de hover só em dispositivos com mouse (no toque eles "grudam") */
+@media (hover: hover) {
+  .svc__link:hover::before { transform: scaleY(1); }
+  .svc__link:hover, .svc__link:hover * { color: var(--ink) !important; }
+  .svc__link:hover .svc__body h3 { transform: translateX(10px); }
+  .svc__link:hover .svc__tag { border-color: var(--ink); }
+  .svc__link:hover .svc__arrow { transform: rotate(0); }
+}
+.svc__link:active { background: rgba(200, 164, 106, .08); }
+.svc__num { font-size: .8rem; color: var(--brass); font-weight: 600; letter-spacing: .1em; transition: color .3s; }
+.svc__body h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2.1rem); display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; transition: transform .5s var(--ease); }
+.svc__body p { color: var(--muted); margin-top: .4rem; font-size: .95rem; transition: color .3s; }
+.svc__tag { font-family: var(--sans); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 700; padding: .3rem .6rem; border-radius: 999px; border: 1px solid var(--brass); color: var(--brass); }
+.svc__dur { display: inline-flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .85rem; }
+.svc__price { font-family: var(--serif); font-size: 1.6rem; color: var(--cream); }
+.svc__arrow { color: var(--brass); transform: rotate(45deg); transition: transform .5s var(--ease); display: grid; place-items: center; }
+
+@media (max-width: 760px) {
+  .svc__link { grid-template-columns: 1fr auto; gap: .5rem 1rem; padding: 1.4rem .2rem; }
+  .svc__body h3 { font-size: 1.45rem; gap: .6rem; }
+  .svc__body p { font-size: .9rem; line-height: 1.5; }
+  .svc__price { font-size: 1.4rem; }
+  .svc__num, .svc__arrow { display: none; }
+  .svc__body { grid-column: 1 / -1; }
+}

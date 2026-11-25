@@ -1,0 +1,7 @@
+.sh { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.sh--center { margin-inline: auto; text-align: center; }
+.sh__kicker { display: inline-flex; align-items: center; gap: .8rem; color: var(--brass); font-size: .75rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; }
+.sh__kicker::before { content: ''; width: 32px; height: 1px; background: currentColor; }
+.sh__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.02; letter-spacing: -.02em; margin: 1rem 0 0; }
+.sh__title em { color: var(--brass); }
+.sh__sub { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-top: 1.1rem; }
